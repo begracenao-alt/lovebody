@@ -286,7 +286,7 @@ function chipProg(){$("go3").disabled=!(selState&&selWant);}
 
 function renderMe(){
   meElem=gogyo(parseInt($("y1").value,10));var t=TYPES[meElem];var k=calcKaika();
-  var km; if(k>=66)km="あなたの"+t.element+"の色気は、今しっかりひらいています。中身と見た目が一致して、それ自体が魅力に🤍";else if(k>=40)km="あなたの色気は、半分くらい出ている状態。あと少し、力をぬいて整えると、ぐっとひらきます。";else km="あなたの色気は、まだそっと眠っている状態。きっかけひとつで、ふっと目覚める伸びしろを持っています🤍";
+  var km; if(k>=66)km="あなたの"+t.element+"の色気は、今しっかりひらいています。中身と見た目が一致して、それが魅力に🤍";else if(k>=40)km="あなたの色気は、半分くらい出ている状態。あと少し、力をぬいて整えると、ぐっとひらきます。";else km="あなたの色気は、まだそっと眠っている状態。きっかけひとつで、ふっと目覚める伸びしろを持っています🤍";
   var st=STATE_DATA[selState]; var careLi=st.care.map(function(c){return '<li>'+c+'</li>';}).join("");
   $("meCard").innerHTML=
     '<div class="res-eyebrow">Your LOVE BODY</div>'+
