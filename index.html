@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>LOVE BODY 診断 ─ Be Grace</title>
+<meta name="description" content="生年月日から、あなたの“LOVE BODY”タイプと、気になるあの人との相性を占う。Be Grace の恋と色気の診断。" />
+<meta name="theme-color" content="#fbf2f4" />
+<link rel="icon" href="icon-192.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="LOVE BODY" />
+<meta property="og:title" content="LOVE BODY 診断 ─ Be Grace" />
+<meta property="og:description" content="あなたのLOVE BODYタイプと、あの人との相性を占う。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#46383f; --ink-soft:#6f5e66; --ink-faint:#a18f97;
+    --rose:#e2a6b4; --rose-deep:#c97f93; --champ:#e6c98a; --champ-deep:#bd9c5e;
+    --lav:#b89ed6; --line:rgba(150,110,130,.14); --card:rgba(255,255,255,.66);
+    --shadow:0 16px 44px -26px rgba(150,90,110,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    font-family:"Shippori Mincho","Hiragino Mincho ProN",serif; color:var(--ink);
+    background:radial-gradient(125% 90% at 50% -10%, #fffafc 0%, #fbf1f5 46%, #f3eef8 100%) fixed;
+    min-height:100vh; line-height:1.85; letter-spacing:.03em; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:480px;margin:0 auto;padding:30px 22px 70px;min-height:100vh}
+  .brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:14px;letter-spacing:.24em;color:var(--rose-deep);text-align:center}
+  .screen{display:none;animation:fade .5s ease}
+  .screen.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  .hero{text-align:center;padding:30px 0 6px}
+  .hero h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:46px;letter-spacing:.12em;color:var(--rose-deep);line-height:1.05}
+  .hero .sub{font-size:15px;letter-spacing:.22em;color:var(--ink-soft);margin-top:12px}
+  .hero .lead{font-size:13.5px;color:var(--ink-soft);line-height:2;margin:18px 14px 0}
+  .ornament{font-size:20px;color:var(--champ-deep);margin:16px 0}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);backdrop-filter:blur(6px);padding:26px 22px;margin:22px 0}
+  .label{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:13px;letter-spacing:.26em;color:var(--rose-deep);text-align:center}
+  .label-ja{text-align:center;font-size:12.5px;letter-spacing:.3em;color:var(--ink-faint);margin:6px 0 18px}
+
+  .birth{display:flex;gap:8px;justify-content:center;align-items:center}
+  .birth select{font-family:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 10px;text-align:center}
+  .birth span{font-size:13px;color:var(--ink-faint)}
+
+  .btn{display:block;width:100%;border:0;border-radius:16px;padding:16px;font-family:inherit;font-size:16px;font-weight:600;letter-spacing:.08em;cursor:pointer;
+    color:#fff;background:linear-gradient(135deg,var(--rose),var(--rose-deep));box-shadow:0 10px 26px -10px rgba(201,127,147,.7);transition:.2s;margin-top:22px}
+  .btn:active{transform:translateY(1px)}
+  .btn--soft{color:var(--rose-deep);background:#fff;border:1px solid var(--rose);box-shadow:var(--shadow)}
+  .btn--ghost{color:var(--ink-soft);background:transparent;box-shadow:none;border:1px solid var(--line);font-weight:500;font-size:14px;padding:13px}
+  .hint{text-align:center;font-size:12px;color:var(--ink-faint);margin-top:14px;line-height:1.8}
+
+  /* 結果 */
+  .res-eyebrow{font-family:"Cormorant Garamond",serif;font-style:italic;letter-spacing:.22em;color:var(--rose-deep);text-align:center;font-size:13px}
+  .res-symbol{font-size:46px;text-align:center;margin:8px 0 4px}
+  .res-type{text-align:center;font-size:26px;font-weight:600;letter-spacing:.08em;color:var(--ink)}
+  .res-tag{text-align:center;font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.9}
+  .blk{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+  .blk .bl{font-family:"Cormorant Garamond",serif;font-style:italic;letter-spacing:.2em;color:var(--champ-deep);font-size:12.5px;margin-bottom:8px}
+  .blk p{font-size:14px;color:var(--ink);line-height:2}
+  .element{display:inline-block;font-size:12px;letter-spacing:.1em;color:var(--rose-deep);border:1px solid var(--rose);border-radius:999px;padding:3px 14px;margin:4px auto 0}
+
+  /* 相性 */
+  .score{text-align:center;margin:6px 0 4px}
+  .score .n{font-family:"Cormorant Garamond",serif;font-size:54px;font-weight:500;color:var(--rose-deep);line-height:1}
+  .score .pct{font-size:18px;color:var(--rose-deep)}
+  .score .k{font-size:12px;letter-spacing:.2em;color:var(--ink-faint);margin-top:4px}
+  .pair{display:flex;justify-content:center;gap:14px;align-items:center;margin:10px 0 4px}
+  .pair .p{text-align:center;font-size:12.5px;color:var(--ink-soft)}
+  .pair .p b{display:block;font-size:15px;color:var(--ink);margin-top:2px}
+  .pair .amp{color:var(--rose);font-size:20px}
+
+  .foot{text-align:center;font-size:11px;color:var(--ink-faint);margin-top:30px;line-height:1.8}
+  .brandmark{text-align:center;font-family:"Cormorant Garamond",serif;letter-spacing:.36em;color:var(--ink-faint);font-size:13px;margin-top:24px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">Be Grace</div>
+
+  <!-- 玄関 -->
+  <section class="screen active" id="s-intro">
+    <div class="hero">
+      <h1>LOVE<br>BODY</h1>
+      <div class="sub">あなたの恋と色気の診断</div>
+      <div class="ornament">♡</div>
+      <p class="lead">
+        生まれた日から、あなたの“LOVE BODYタイプ”を。<br>
+        そして、気になるあの人との相性も。<br>
+        恋も色気も、整えるほど、ひらいていく。
+      </p>
+    </div>
+    <div class="card">
+      <div class="label">Your Birthday</div>
+      <div class="label-ja">あなたの 生まれた日</div>
+      <div class="birth">
+        <select id="y1"></select><span>年</span>
+        <select id="m1"></select><span>月</span>
+        <select id="d1"></select><span>日</span>
+      </div>
+      <button class="btn" id="go1">わたしのLOVE BODYを見る</button>
+      <p class="hint">所要 約30秒 ・ 生年月日だけでOK</p>
+    </div>
+  </section>
+
+  <!-- 自分の結果 -->
+  <section class="screen" id="s-me">
+    <div class="card" id="meCard"></div>
+    <button class="btn" id="toCompat">気になるあの人との相性を占う</button>
+    <button class="btn btn--ghost" id="redo1">生年月日を入れ直す</button>
+  </section>
+
+  <!-- 相手の入力 -->
+  <section class="screen" id="s-pin">
+    <div class="hero" style="padding:18px 0 0"><div class="ornament">♡</div></div>
+    <div class="card">
+      <div class="label">Their Birthday</div>
+      <div class="label-ja">気になる あの人の 生まれた日</div>
+      <div class="birth">
+        <select id="y2"></select><span>年</span>
+        <select id="m2"></select><span>月</span>
+        <select id="d2"></select><span>日</span>
+      </div>
+      <button class="btn" id="go2">ふたりの相性を占う</button>
+      <p class="hint">相手の名前は要りません。生まれた日だけで占えます。</p>
+    </div>
+    <button class="btn btn--ghost" id="backMe">わたしの結果に戻る</button>
+  </section>
+
+  <!-- 相性結果 -->
+  <section class="screen" id="s-compat">
+    <div class="card" id="compatCard"></div>
+    <button class="btn btn--soft" id="again">別の人とも占う</button>
+    <button class="btn btn--ghost" id="home">最初に戻る</button>
+  </section>
+
+  <p class="foot">これは生年月日（五行）をもとにした、たのしむための相性占いです。<br>結果は、あなたの可能性を否定するものではありません🤍</p>
+  <div class="brandmark">Be Grace</div>
+</div>
+
+<script>
+"use strict";
+var $=function(id){return document.getElementById(id);};
+
+/* ---------- 五行（生まれ年の干より） ---------- */
+// 甲乙=木 / 丙丁=火 / 戊己=土 / 庚辛=金 / 壬癸=水
+function gogyo(y){
+  var i=(((y-4)%10)+10)%10;
+  return ["ki","ki","hi","hi","tsuchi","tsuchi","kin","kin","mizu","mizu"][i];
+}
+
+/* ---------- LOVE BODY タイプ（五行ごと・たたき台の言葉） ---------- */
+var TYPES={
+  mizu:{ name:"うるおいLOVE BODY", element:"水", symbol:"🌙",
+    tag:"静かな水面のような、奥行きのある色気。",
+    charm:"多くを語らなくても、まなざしや余白で惹きつける人。一緒にいると、なぜか深いところで安心される——そんなミステリアスなやわらかさが魅力です。",
+    iro:"がんばって出すより、ゆるめること。肩と目元の力を抜いて、ゆっくり話す。うるおった肌と髪が、あなたの色気をいちばん引き出します。",
+    koi:"心を開くまでに少し時間がかかるタイプ。焦らず“安心できる人”を選ぶと、本来の深い愛情がひらきます。" },
+  ki:{ name:"のびやかLOVE BODY", element:"木", symbol:"🌿",
+    tag:"まっすぐ伸びる、しなやかな魅力。",
+    charm:"自然体で、まわりを元気にする人。飾らない笑顔と、すっと伸びた姿勢に、思わず惹かれる人が多いタイプ。一緒にいると前を向ける、爽やかな色気です。",
+    iro:"姿勢を整えること。背すじが伸びると、あなたのしなやかさがそのまま魅力に。明るい色や、風を感じる装いが似合います。",
+    koi:"まっすぐで一途。気持ちを素直に伝えるほど、相手の心が動きます。" },
+  hi:{ name:"ときめきLOVE BODY", element:"火", symbol:"🔥",
+    tag:"火花のような、惹きつける情熱。",
+    charm:"いるだけで場が華やぐ、太陽みたいな人。表情が豊かで、感情がまっすぐ。その熱量に、まわりは思わずドキッとします。恋を動かす力があるタイプ。",
+    iro:"笑顔と表情。気持ちを抑え込まず、ふっとゆるめて出すほど、あなたの華やかな色気があふれます。血色のいい肌づくりを。",
+    koi:"惚れっぽく、燃えやすい。少しだけ“間”をおくと、相手があなたを追いかけたくなります。" },
+  tsuchi:{ name:"つつみこむLOVE BODY", element:"土", symbol:"🌾",
+    tag:"安心して甘えたくなる、あたたかい愛され。",
+    charm:"そばにいると、ほっとする人。やわらかい空気と面倒見のよさで、自然と愛されるタイプ。“帰ってきたくなる場所”のような、ぬくもりの色気です。",
+    iro:"力を抜いて、ふんわりほほえむこと。やわらかい素材・あたたかい色みが、あなたの包容力を引き立てます。",
+    koi:"尽くしすぎて、自分を後回しにしがち。受け取ることも愛のうち、と覚えておいて。" },
+  kin:{ name:"凛LOVE BODY", element:"金", symbol:"🤍",
+    tag:"凛とした、品のある色気。",
+    charm:"立ち姿や所作が美しい、芯のある人。黙っていても伝わる静かな存在感に、品の良い色気がにじみます。追いかけたくなる、凛とした魅力です。",
+    iro:"姿勢と所作を整えること。あごを軽く引いてまっすぐ立つだけで、あなたの品が際立ちます。きれいめの装いが似合います。",
+    koi:"クールに見えて、内側は情熱的。心を開いた相手にだけ見せる甘さが、最大の武器です。" }
+};
+
+/* ---------- 相性（五行の相生・相剋） ---------- */
+var SHENG={ki:"hi",hi:"tsuchi",tsuchi:"kin",kin:"mizu",mizu:"ki"}; // A生B
+var KE={ki:"tsuchi",tsuchi:"mizu",mizu:"hi",hi:"kin",kin:"ki"};    // A剋B
+function relation(a,b){
+  if(a===b) return "same";
+  if(SHENG[a]===b) return "agiveB";
+  if(SHENG[b]===a) return "bgiveA";
+  if(KE[a]===b) return "akeB";
+  if(KE[b]===a) return "bkeA";
+  return "same";
+}
+var COMPAT={
+  bgiveA:{ score:92, title:"満たされる相性", msg:"相手が、あなたを自然に満たしてくれる関係。一緒にいるほど、あなたの魅力がやわらかくひらいていきます。甘え上手になると、もっと愛されます🤍", tip:"安心して、受け取ること。" },
+  agiveB:{ score:88, title:"育てあう相性", msg:"あなたが、相手をそっと伸ばしていける関係。あなたの存在が、相手の良さを引き出します。与えすぎて疲れないよう、自分も大切に🤍", tip:"がんばりすぎず、対等に。" },
+  same:{ score:84, title:"似た者どうしの相性", msg:"同じ空気を持つ、わかりあえる関係。心地よさは抜群。慣れて“当たり前”にならないよう、ときめきをひとさじ足して🤍", tip:"小さなサプライズを大切に。" },
+  akeB:{ score:78, title:"刺激しあう相性", msg:"あなたが、相手に良い刺激を与える関係。ドキドキと成長がある一方、引っぱりすぎると疲れさせることも。ゆるめる余白を🤍", tip:"力を抜いて、相手のペースも尊重。" },
+  bkeA:{ score:76, title:"動かされる相性", msg:"相手が、あなたの世界を広げてくれる関係。刺激的で、新しい自分に出会える。振り回されすぎず、自分の軸も大切に🤍", tip:"自分の“好き”を、見失わないで。" }
+};
+
+/* ---------- セレクト初期化 ---------- */
+function fillSelects(yId,mId,dId){
+  var y=$(yId),m=$(mId),d=$(dId);
+  var now=new Date().getFullYear();
+  var opt="";
+  for(var yy=now-12; yy>=1950; yy--) opt+="<option value='"+yy+"'>"+yy+"</option>";
+  y.innerHTML=opt;
+  var mo=""; for(var mm=1;mm<=12;mm++) mo+="<option value='"+mm+"'>"+mm+"</option>"; m.innerHTML=mo;
+  var dd=""; for(var d2=1;d2<=31;d2++) dd+="<option value='"+d2+"'>"+d2+"</option>"; d.innerHTML=dd;
+  y.value=1995; m.value=1; d.value=1;
+}
+fillSelects("y1","m1","d1"); fillSelects("y2","m2","d2");
+
+var meElem=null;
+
+function show(id){
+  var ss=document.querySelectorAll(".screen");
+  for(var i=0;i<ss.length;i++) ss[i].classList.remove("active");
+  $(id).classList.add("active");
+  window.scrollTo(0,0);
+}
+
+function renderMe(){
+  meElem=gogyo(parseInt($("y1").value,10));
+  var t=TYPES[meElem];
+  $("meCard").innerHTML=
+    '<div class="res-eyebrow">Your LOVE BODY</div>'+
+    '<div class="res-symbol">'+t.symbol+'</div>'+
+    '<div class="res-type">'+t.name+'</div>'+
+    '<div style="text-align:center"><span class="element">五行 ・ '+t.element+'</span></div>'+
+    '<div class="res-tag">'+t.tag+'</div>'+
+    '<div class="blk"><div class="bl">Charm ─ あなたの魅力</div><p>'+t.charm+'</p></div>'+
+    '<div class="blk"><div class="bl">Sensual ─ 色気の出し方</div><p>'+t.iro+'</p></div>'+
+    '<div class="blk"><div class="bl">Love ─ 恋のヒント</div><p>'+t.koi+'</p></div>';
+  show("s-me");
+}
+
+function renderCompat(){
+  var partElem=gogyo(parseInt($("y2").value,10));
+  var rel=relation(meElem,partElem);
+  var c=COMPAT[rel];
+  var me=TYPES[meElem], pa=TYPES[partElem];
+  $("compatCard").innerHTML=
+    '<div class="res-eyebrow">Compatibility</div>'+
+    '<div class="pair"><div class="p">あなた<b>'+me.element+'</b></div><div class="amp">♡</div><div class="p">あの人<b>'+pa.element+'</b></div></div>'+
+    '<div class="score"><span class="n">'+c.score+'</span><span class="pct">%</span><div class="k">'+c.title+'</div></div>'+
+    '<div class="blk"><div class="bl">Reading ─ ふたりの関係</div><p>'+c.msg+'</p></div>'+
+    '<div class="blk"><div class="bl">Hint ─ 近づき方</div><p>'+c.tip+'</p></div>';
+  show("s-compat");
+}
+
+$("go1").addEventListener("click",renderMe);
+$("redo1").addEventListener("click",function(){show("s-intro");});
+$("toCompat").addEventListener("click",function(){show("s-pin");});
+$("backMe").addEventListener("click",function(){show("s-me");});
+$("go2").addEventListener("click",renderCompat);
+$("again").addEventListener("click",function(){show("s-pin");});
+$("home").addEventListener("click",function(){show("s-intro");});
+</script>
+</body>
+</html>
