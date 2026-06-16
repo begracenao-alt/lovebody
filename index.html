@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>LOVE BODY 診断 ─ Be Grace</title>
-<meta name="description" content="生年月日とあなたの今から、“LOVE BODY”タイプと色気の開花度、気になるあの人との相性を占う。Be Grace の恋と色気の診断。" />
+<meta name="description" content="生年月日と今のあなたから、LOVE BODYタイプ・色気の開花度・今の愛の状態、そして気になるあの人との相性まで。Be Grace の恋と色気の診断。" />
 <meta name="theme-color" content="#fbf2f4" />
 <link rel="icon" href="icon-192.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -13,7 +13,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 <meta name="apple-mobile-web-app-title" content="LOVE BODY" />
 <meta property="og:title" content="LOVE BODY 診断 ─ Be Grace" />
-<meta property="og:description" content="あなたのLOVE BODYタイプと色気の開花度、あの人との相性。" />
+<meta property="og:description" content="LOVE BODYタイプ・色気の開花度・今の愛・あの人との相性。" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
@@ -26,31 +26,25 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
   html,body{height:100%}
-  body{
-    font-family:"Shippori Mincho","Hiragino Mincho ProN",serif; color:var(--ink);
+  body{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif; color:var(--ink);
     background:radial-gradient(125% 90% at 50% -10%, #fffafc 0%, #fbf1f5 46%, #f3eef8 100%) fixed;
-    min-height:100vh; line-height:1.85; letter-spacing:.03em; -webkit-font-smoothing:antialiased;
-  }
+    min-height:100vh; line-height:1.85; letter-spacing:.03em; -webkit-font-smoothing:antialiased;}
   .wrap{max-width:480px;margin:0 auto;padding:30px 22px 70px;min-height:100vh}
   .brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:14px;letter-spacing:.24em;color:var(--rose-deep);text-align:center}
   .screen{display:none;animation:fade .5s ease}
   .screen.active{display:block}
   @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-
   .hero{text-align:center;padding:30px 0 6px}
   .hero h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:46px;letter-spacing:.12em;color:var(--rose-deep);line-height:1.05}
   .hero .sub{font-size:15px;letter-spacing:.22em;color:var(--ink-soft);margin-top:12px}
   .hero .lead{font-size:13.5px;color:var(--ink-soft);line-height:2;margin:18px 14px 0}
   .ornament{font-size:20px;color:var(--champ-deep);margin:16px 0}
-
   .card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);backdrop-filter:blur(6px);padding:26px 22px;margin:22px 0}
   .label{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:13px;letter-spacing:.26em;color:var(--rose-deep);text-align:center}
   .label-ja{text-align:center;font-size:12.5px;letter-spacing:.3em;color:var(--ink-faint);margin:6px 0 18px}
-
   .birth{display:flex;gap:8px;justify-content:center;align-items:center}
   .birth select{font-family:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 10px;text-align:center}
   .birth span{font-size:13px;color:var(--ink-faint)}
-
   .btn{display:block;width:100%;border:0;border-radius:16px;padding:16px;font-family:inherit;font-size:16px;font-weight:600;letter-spacing:.08em;cursor:pointer;
     color:#fff;background:linear-gradient(135deg,var(--rose),var(--rose-deep));box-shadow:0 10px 26px -10px rgba(201,127,147,.7);transition:.2s;margin-top:22px}
   .btn:active{transform:translateY(1px)}
@@ -58,8 +52,6 @@
   .btn--soft{color:var(--rose-deep);background:#fff;border:1px solid var(--rose);box-shadow:var(--shadow)}
   .btn--ghost{color:var(--ink-soft);background:transparent;box-shadow:none;border:1px solid var(--line);font-weight:500;font-size:14px;padding:13px}
   .hint{text-align:center;font-size:12px;color:var(--ink-faint);margin-top:14px;line-height:1.8}
-
-  /* 質問 */
   .qhead{text-align:center;margin:6px 0 4px}
   .qhead .ql{font-family:"Cormorant Garamond",serif;font-style:italic;letter-spacing:.2em;color:var(--rose-deep);font-size:13px}
   .qhead .qj{font-size:12.5px;letter-spacing:.16em;color:var(--ink-faint);margin-top:4px}
@@ -70,8 +62,9 @@
   .q-choice{flex:1;border:1px solid var(--line);background:#fff;border-radius:13px;padding:11px 4px;font-family:inherit;font-size:12.5px;color:var(--ink-soft);cursor:pointer;transition:.2s}
   .q-choice.on{border-color:var(--rose);color:var(--rose-deep);background:linear-gradient(180deg,#fff,#fdf2f5);box-shadow:0 0 0 1.5px var(--rose)}
   .qprog{text-align:center;font-size:12px;color:var(--ink-faint);margin-top:6px}
-
-  /* 結果 */
+  .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:6px}
+  .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 14px;font-family:inherit;font-size:13px;color:var(--ink-soft);cursor:pointer;transition:.2s}
+  .chip.on{border-color:var(--rose);color:var(--rose-deep);background:linear-gradient(180deg,#fff,#fdf2f5);box-shadow:0 0 0 1.5px var(--rose)}
   .res-eyebrow{font-family:"Cormorant Garamond",serif;font-style:italic;letter-spacing:.22em;color:var(--rose-deep);text-align:center;font-size:13px}
   .res-symbol{font-size:46px;text-align:center;margin:8px 0 4px}
   .res-type{text-align:center;font-size:26px;font-weight:600;letter-spacing:.08em;color:var(--ink)}
@@ -86,7 +79,9 @@
   .blk{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
   .blk .bl{font-family:"Cormorant Garamond",serif;font-style:italic;letter-spacing:.2em;color:var(--champ-deep);font-size:12.5px;margin-bottom:8px}
   .blk p{font-size:14px;color:var(--ink);line-height:2}
-
+  .blk .read{font-size:13.5px;color:var(--ink-soft);line-height:1.95}
+  .blk ul{margin:8px 0 0 1.1em}
+  .blk li{font-size:13.5px;line-height:1.9;color:var(--ink)}
   .score{text-align:center;margin:6px 0 4px}
   .score .n{font-family:"Cormorant Garamond",serif;font-size:54px;font-weight:500;color:var(--rose-deep);line-height:1}
   .score .pct{font-size:18px;color:var(--rose-deep)}
@@ -95,7 +90,7 @@
   .pair .p{text-align:center;font-size:12.5px;color:var(--ink-soft)}
   .pair .p b{display:block;font-size:15px;color:var(--ink);margin-top:2px}
   .pair .amp{color:var(--rose);font-size:20px}
-
+  .grace{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);text-align:center;font-size:13.5px;color:var(--ink-soft);line-height:2}
   .foot{text-align:center;font-size:11px;color:var(--ink-faint);margin-top:30px;line-height:1.8}
   .brandmark{text-align:center;font-family:"Cormorant Garamond",serif;letter-spacing:.36em;color:var(--ink-faint);font-size:13px;margin-top:24px}
 </style>
@@ -104,67 +99,60 @@
 <div class="wrap">
   <div class="brand">Be Grace</div>
 
-  <!-- 玄関 -->
   <section class="screen active" id="s-intro">
     <div class="hero">
       <h1>LOVE<br>BODY</h1>
       <div class="sub">あなたの恋と色気の診断</div>
       <div class="ornament">♡</div>
-      <p class="lead">
-        生まれた日と、今のあなたから、<br>
-        “LOVE BODYタイプ”と色気の開花度を。<br>
-        そして、気になるあの人との相性も。
-      </p>
+      <p class="lead">生まれた日と、今のあなたから、<br>LOVE BODYタイプ・色気の開花度・今の愛の状態を。<br>そして、気になるあの人との相性も。</p>
     </div>
     <div class="card">
       <div class="label">Your Birthday</div>
       <div class="label-ja">あなたの 生まれた日</div>
-      <div class="birth">
-        <select id="y1"></select><span>年</span>
-        <select id="m1"></select><span>月</span>
-        <select id="d1"></select><span>日</span>
-      </div>
+      <div class="birth"><select id="y1"></select><span>年</span><select id="m1"></select><span>月</span><select id="d1"></select><span>日</span></div>
       <button class="btn" id="go1">次へ（かんたんな質問）</button>
-      <p class="hint">所要 約1分 ・ 8つの質問に答えるだけ</p>
+      <p class="hint">所要 約2分 ・ 生年月日と、いくつかの質問だけ</p>
     </div>
   </section>
 
-  <!-- 質問 -->
   <section class="screen" id="s-q">
     <div class="qhead"><div class="ql">A few questions</div><div class="qj">今のあなたに、あてはまる？</div></div>
-    <div class="card">
-      <div id="qList"></div>
-    </div>
-    <button class="btn" id="go2" disabled>結果を見る</button>
+    <div class="card"><div id="qList"></div></div>
+    <button class="btn" id="go2" disabled>次へ</button>
     <div class="qprog" id="qProg"></div>
     <button class="btn btn--ghost" id="backIntro">生年月日に戻る</button>
   </section>
 
-  <!-- 自分の結果 -->
+  <section class="screen" id="s-love">
+    <div class="qhead"><div class="ql">Your love now</div><div class="qj">今の、あなたの恋・関係について</div></div>
+    <div class="card">
+      <div class="label-ja" style="margin:0 0 12px">今のあなたに、近いのは？</div>
+      <div class="chips" id="stChips"></div>
+      <div class="label-ja" style="margin:24px 0 12px;padding-top:18px;border-top:1px solid var(--line)">本当は、どうしたい？</div>
+      <div class="chips" id="wantChips"></div>
+    </div>
+    <button class="btn" id="go3" disabled>結果を見る</button>
+    <button class="btn btn--ghost" id="backQ">質問に戻る</button>
+  </section>
+
   <section class="screen" id="s-me">
     <div class="card" id="meCard"></div>
     <button class="btn" id="toCompat">気になるあの人との相性を占う</button>
     <button class="btn btn--ghost" id="redo">最初からやり直す</button>
   </section>
 
-  <!-- 相手の入力 -->
   <section class="screen" id="s-pin">
     <div class="hero" style="padding:18px 0 0"><div class="ornament">♡</div></div>
     <div class="card">
       <div class="label">Their Birthday</div>
       <div class="label-ja">気になる あの人の 生まれた日</div>
-      <div class="birth">
-        <select id="y2"></select><span>年</span>
-        <select id="m2"></select><span>月</span>
-        <select id="d2"></select><span>日</span>
-      </div>
+      <div class="birth"><select id="y2"></select><span>年</span><select id="m2"></select><span>月</span><select id="d2"></select><span>日</span></div>
       <button class="btn" id="goC">ふたりの相性を占う</button>
       <p class="hint">相手の名前は要りません。生まれた日だけで占えます。</p>
     </div>
     <button class="btn btn--ghost" id="backMe">わたしの結果に戻る</button>
   </section>
 
-  <!-- 相性結果 -->
   <section class="screen" id="s-compat">
     <div class="card" id="compatCard"></div>
     <button class="btn btn--soft" id="again">別の人とも占う</button>
@@ -178,43 +166,31 @@
 <script>
 "use strict";
 var $=function(id){return document.getElementById(id);};
+function gogyo(y){var i=(((y-4)%10)+10)%10;return ["ki","ki","hi","hi","tsuchi","tsuchi","kin","kin","mizu","mizu"][i];}
 
-/* ---------- 五行（生まれ年の干より） ---------- */
-function gogyo(y){
-  var i=(((y-4)%10)+10)%10;
-  return ["ki","ki","hi","hi","tsuchi","tsuchi","kin","kin","mizu","mizu"][i];
-}
-
-/* ---------- LOVE BODY タイプ（五行ごと・たたき台） ---------- */
 var TYPES={
-  mizu:{ name:"うるおいLOVE BODY", element:"水", symbol:"🌙",
-    tag:"静かな水面のような、奥行きのある色気。",
+  mizu:{ name:"うるおいLOVE BODY", element:"水", symbol:"🌙", tag:"静かな水面のような、奥行きのある色気。",
     charm:"多くを語らなくても、まなざしや余白で惹きつける人。一緒にいると、なぜか深いところで安心される——そんなミステリアスなやわらかさが魅力です。",
     iro:"がんばって出すより、ゆるめること。肩と目元の力を抜いて、ゆっくり話す。うるおった肌と髪が、あなたの色気をいちばん引き出します。",
     koi:"心を開くまでに少し時間がかかるタイプ。焦らず“安心できる人”を選ぶと、本来の深い愛情がひらきます。" },
-  ki:{ name:"のびやかLOVE BODY", element:"木", symbol:"🌿",
-    tag:"まっすぐ伸びる、しなやかな魅力。",
+  ki:{ name:"のびやかLOVE BODY", element:"木", symbol:"🌿", tag:"まっすぐ伸びる、しなやかな魅力。",
     charm:"自然体で、まわりを元気にする人。飾らない笑顔と、すっと伸びた姿勢に、思わず惹かれる人が多いタイプ。一緒にいると前を向ける、爽やかな色気です。",
     iro:"姿勢を整えること。背すじが伸びると、あなたのしなやかさがそのまま魅力に。明るい色や、風を感じる装いが似合います。",
     koi:"まっすぐで一途。気持ちを素直に伝えるほど、相手の心が動きます。" },
-  hi:{ name:"ときめきLOVE BODY", element:"火", symbol:"🔥",
-    tag:"火花のような、惹きつける情熱。",
+  hi:{ name:"ときめきLOVE BODY", element:"火", symbol:"🔥", tag:"火花のような、惹きつける情熱。",
     charm:"いるだけで場が華やぐ、太陽みたいな人。表情が豊かで、感情がまっすぐ。その熱量に、まわりは思わずドキッとします。恋を動かす力があるタイプ。",
     iro:"笑顔と表情。気持ちを抑え込まず、ふっとゆるめて出すほど、あなたの華やかな色気があふれます。血色のいい肌づくりを。",
     koi:"惚れっぽく、燃えやすい。少しだけ“間”をおくと、相手があなたを追いかけたくなります。" },
-  tsuchi:{ name:"つつみこむLOVE BODY", element:"土", symbol:"🌾",
-    tag:"安心して甘えたくなる、あたたかい愛され。",
+  tsuchi:{ name:"つつみこむLOVE BODY", element:"土", symbol:"🌾", tag:"安心して甘えたくなる、あたたかい愛され。",
     charm:"そばにいると、ほっとする人。やわらかい空気と面倒見のよさで、自然と愛されるタイプ。“帰ってきたくなる場所”のような、ぬくもりの色気です。",
     iro:"力を抜いて、ふんわりほほえむこと。やわらかい素材・あたたかい色みが、あなたの包容力を引き立てます。",
     koi:"尽くしすぎて、自分を後回しにしがち。受け取ることも愛のうち、と覚えておいて。" },
-  kin:{ name:"凛LOVE BODY", element:"金", symbol:"🤍",
-    tag:"凛とした、品のある色気。",
+  kin:{ name:"凛LOVE BODY", element:"金", symbol:"🤍", tag:"凛とした、品のある色気。",
     charm:"立ち姿や所作が美しい、芯のある人。黙っていても伝わる静かな存在感に、品の良い色気がにじみます。追いかけたくなる、凛とした魅力です。",
     iro:"姿勢と所作を整えること。あごを軽く引いてまっすぐ立つだけで、あなたの品が際立ちます。きれいめの装いが似合います。",
     koi:"クールに見えて、内側は情熱的。心を開いた相手にだけ見せる甘さが、最大の武器です。" }
 };
 
-/* ---------- 質問（色気の開花度・たたき台） pol:+1=出ている / -1=隠している ---------- */
 var QUESTIONS=[
   { t:"自分の見た目に、まあまあ自信がある", pol:1 },
   { t:"「かわいい」「素敵」と言われたら、素直に受け取れる", pol:1 },
@@ -227,112 +203,106 @@ var QUESTIONS=[
 ];
 var CHOICES=[ {l:"はい", v:1}, {l:"どちらでも", v:0.5}, {l:"いいえ", v:0} ];
 var ANS=[];
+function calcKaika(){var sum=0,cnt=0;for(var i=0;i<QUESTIONS.length;i++){if(ANS[i]==null)continue;var v=QUESTIONS[i].pol>0?ANS[i]:(1-ANS[i]);sum+=v;cnt++;}return cnt?Math.round(sum/cnt*100):50;}
 
-function calcKaika(){
-  var sum=0,cnt=0;
-  for(var i=0;i<QUESTIONS.length;i++){
-    if(ANS[i]==null) continue;
-    var v = QUESTIONS[i].pol>0 ? ANS[i] : (1-ANS[i]);
-    sum+=v; cnt++;
-  }
-  return cnt? Math.round(sum/cnt*100) : 50;
-}
+/* 今の愛・関係の状態（HPのLOVEより・恋愛のリーディング＋整え方） */
+var STATES=[
+  {k:"kincho",label:"好きな人の前で緊張している"},
+  {k:"kizukai",label:"相手に気を使っている"},
+  {k:"ganbari",label:"恋に、がんばりすぎている"},
+  {k:"nomikomi",label:"本音を飲み込んでいる"},
+  {k:"muri",label:"少し無理している"},
+  {k:"odayaka",label:"穏やかに過ごせている"},
+  {k:"anshin",label:"安心している"},
+  {k:"uketore",label:"愛を受け取れている"},
+  {k:"jibun",label:"自分らしくいられる"},
+  {k:"tanoshi",label:"今の関係を楽しめている"}
+];
+var STATE_DATA={
+  kincho:{kokoro:"ちょっと気を張って、肩に力が入っているみたい。",karada:"肩・首がかたく、息が浅め。",lead:"ふっと力をぬくと、ちょうどよくなります。",care:["肩を、すとんと落とす","息を長めに吐く","あたたかいものを、ひと口"]},
+  kizukai:{kokoro:"相手を思いやれる、やさしい状態。ちょっと自分は後回し。",karada:"背中・首が、かたくなりがち。",lead:"アンテナを、自分にもひとつ向けて。",care:["首と背中をゆるめる","ひとりの時間を少し","深呼吸を、ゆっくり3回"]},
+  ganbari:{kokoro:"愛そうとする力がある。ちょっと走りすぎかも。",karada:"全身に、余分な力み。",lead:"がんばらなくても、愛されていい。ひとつ、力をぬいて。",care:["頭の中を、紙に書き出す","遠くの景色を、ぼーっと見る","自分を、やさしく癒す"]},
+  nomikomi:{kokoro:"本音が、喉のあたりで待っている。",karada:"喉・あごが、つまりがち。",lead:"一気に言わなくて大丈夫。まず紙の上で、声にして。",care:["呼吸を整える","本音を、書き出す","小さく、ひとつ伝えてみる"]},
+  muri:{kokoro:"本当は、ちょっと休みたいサイン。",karada:"體が重め、疲れが残りがち。",lead:"今日はひとつ、手放していい日に。",care:["呼吸を整える","本音を、書き出す","今日はひとつ、やめてみる"]},
+  odayaka:{kokoro:"心がなぎ。落ち着いた、いい状態。",karada:"呼吸が深く、體がやわらか。",lead:"この心地よさを、たっぷり味わって。",care:["ゆっくり深呼吸して、味わう","好きな景色や音に、ひたる","この感覚を、體に覚えさせる"]},
+  anshin:{kokoro:"ほっと満ちている、あたたかい状態。",karada:"胸がひらいて、息がふかい。",lead:"ひらいた今こそ、愛を受け取りどき。",care:["胸をひらいて、深呼吸","うれしかったことを、書き出す","誰かに「ありがとう」を伝える"]},
+  uketore:{kokoro:"愛や豊かさが、ちゃんと届いている。",karada:"みぞおち・胸が、やわらかい。",lead:"受け取ったぶん、めぐらせていきましょう。",care:["受け取ったものを、書き出す","誰かに、小さく分けてみる","満ちた感覚を、體で味わう"]},
+  jibun:{kokoro:"等身大で、のびのび。とてもいい状態。",karada:"呼吸が自然で、姿勢がらく。",lead:"この“わたし”を、もっと味わって。",care:["好きなことを、ひとつする","自分のいいところを、書き出す","のびをして、體をひらく"]},
+  tanoshi:{kokoro:"つながりを、軽やかに楽しめている。",karada:"ふっと笑える、やわらかさ。",lead:"楽しい今を、循環させていきましょう。",care:["うれしい瞬間を、味わう","感謝を、言葉にして伝える","この心地よさを、體に記憶する"]}
+};
+var WANTS=[
+  {k:"anshin",label:"安心したい"},{k:"uketoru",label:"受け取りたい"},{k:"amae",label:"甘えたい"},
+  {k:"sunao",label:"素直に伝えたい"},{k:"kyori",label:"距離を取りたい"},{k:"taisetsu",label:"自分を大切にしたい"},
+  {k:"ajiwau",label:"今の幸せを味わいたい"},{k:"motto",label:"もっと楽しみたい"},{k:"junkan",label:"愛を循環させたい"},{k:"sodateru",label:"このまま大切に育てたい"}
+];
+var WANT_MSG={
+  anshin:"安心は、もらう前に、自分の體がゆるむことから。ひと呼吸から始まります。",
+  uketoru:"受け取るコツは、力をぬくこと。ゆるんだ體に、ちゃんと入ってきます。",
+  amae:"甘えたい気持ちは、自然な願い。まず自分が、自分に甘えていい。",
+  sunao:"素直さは、整った體から出てきます。伝える前に、まず一呼吸。",
+  kyori:"距離をとるのは、自分を大切にする知恵。ひとり時間で、體を戻して。",
+  taisetsu:"大切にする第一歩は、體の声を、ひとつ聞いてあげること。",
+  ajiwau:"幸せは、味わうほど深まります。今ここを、體で感じて。",
+  motto:"もっと楽しむコツは、ゆるむこと。軽い體に、よろこびはめぐります。",
+  junkan:"受け取って、めぐらせる。あなたを通って、愛は循環していきます。",
+  sodateru:"育てるのは、相手より先に、自分との関係。小さなケアから。"
+};
+var GRACE="愛も豊かさも、受け取る力からはじまります。<br>満ちている日も、ゆれた日も、どちらも愛しい。<br>あなたの體がゆるむほど、愛はめぐっていきます。<br>今日のひとつを、體で味わって🤍";
 
-/* ---------- 相性（五行の相生・相剋） ---------- */
 var SHENG={ki:"hi",hi:"tsuchi",tsuchi:"kin",kin:"mizu",mizu:"ki"};
 var KE={ki:"tsuchi",tsuchi:"mizu",mizu:"hi",hi:"kin",kin:"ki"};
-function relation(a,b){
-  if(a===b) return "same";
-  if(SHENG[a]===b) return "agiveB";
-  if(SHENG[b]===a) return "bgiveA";
-  if(KE[a]===b) return "akeB";
-  if(KE[b]===a) return "bkeA";
-  return "same";
-}
+function relation(a,b){if(a===b)return"same";if(SHENG[a]===b)return"agiveB";if(SHENG[b]===a)return"bgiveA";if(KE[a]===b)return"akeB";if(KE[b]===a)return"bkeA";return"same";}
 var COMPAT={
-  bgiveA:{ score:92, title:"満たされる相性", msg:"相手が、あなたを自然に満たしてくれる関係。一緒にいるほど、あなたの魅力がやわらかくひらいていきます。甘え上手になると、もっと愛されます🤍", tip:"安心して、受け取ること。" },
-  agiveB:{ score:88, title:"育てあう相性", msg:"あなたが、相手をそっと伸ばしていける関係。あなたの存在が、相手の良さを引き出します。与えすぎて疲れないよう、自分も大切に🤍", tip:"がんばりすぎず、対等に。" },
-  same:{ score:84, title:"似た者どうしの相性", msg:"同じ空気を持つ、わかりあえる関係。心地よさは抜群。慣れて“当たり前”にならないよう、ときめきをひとさじ足して🤍", tip:"小さなサプライズを大切に。" },
-  akeB:{ score:78, title:"刺激しあう相性", msg:"あなたが、相手に良い刺激を与える関係。ドキドキと成長がある一方、引っぱりすぎると疲れさせることも。ゆるめる余白を🤍", tip:"力を抜いて、相手のペースも尊重。" },
-  bkeA:{ score:76, title:"動かされる相性", msg:"相手が、あなたの世界を広げてくれる関係。刺激的で、新しい自分に出会える。振り回されすぎず、自分の軸も大切に🤍", tip:"自分の“好き”を、見失わないで。" }
+  bgiveA:{score:92,title:"満たされる相性",msg:"相手が、あなたを自然に満たしてくれる関係。一緒にいるほど、あなたの魅力がやわらかくひらいていきます。甘え上手になると、もっと愛されます🤍",tip:"安心して、受け取ること。"},
+  agiveB:{score:88,title:"育てあう相性",msg:"あなたが、相手をそっと伸ばしていける関係。あなたの存在が、相手の良さを引き出します。与えすぎて疲れないよう、自分も大切に🤍",tip:"がんばりすぎず、対等に。"},
+  same:{score:84,title:"似た者どうしの相性",msg:"同じ空気を持つ、わかりあえる関係。心地よさは抜群。慣れて“当たり前”にならないよう、ときめきをひとさじ足して🤍",tip:"小さなサプライズを大切に。"},
+  akeB:{score:78,title:"刺激しあう相性",msg:"あなたが、相手に良い刺激を与える関係。ドキドキと成長がある一方、引っぱりすぎると疲れさせることも。ゆるめる余白を🤍",tip:"力を抜いて、相手のペースも尊重。"},
+  bkeA:{score:76,title:"動かされる相性",msg:"相手が、あなたの世界を広げてくれる関係。刺激的で、新しい自分に出会える。振り回されすぎず、自分の軸も大切に🤍",tip:"自分の“好き”を、見失わないで。"}
 };
 
-/* ---------- セレクト ---------- */
-function fillSelects(yId,mId,dId){
-  var y=$(yId),m=$(mId),d=$(dId), now=new Date().getFullYear(), opt="";
-  for(var yy=now-12; yy>=1950; yy--) opt+="<option value='"+yy+"'>"+yy+"</option>";
-  y.innerHTML=opt;
-  var mo=""; for(var mm=1;mm<=12;mm++) mo+="<option value='"+mm+"'>"+mm+"</option>"; m.innerHTML=mo;
-  var dd=""; for(var dv=1;dv<=31;dv++) dd+="<option value='"+dv+"'>"+dv+"</option>"; d.innerHTML=dd;
-  y.value=1995; m.value=1; d.value=1;
-}
-fillSelects("y1","m1","d1"); fillSelects("y2","m2","d2");
+function fillSelects(yId,mId,dId){var y=$(yId),m=$(mId),d=$(dId),now=new Date().getFullYear(),opt="";
+  for(var yy=now-12;yy>=1950;yy--)opt+="<option value='"+yy+"'>"+yy+"</option>";y.innerHTML=opt;
+  var mo="";for(var mm=1;mm<=12;mm++)mo+="<option value='"+mm+"'>"+mm+"</option>";m.innerHTML=mo;
+  var dd="";for(var dv=1;dv<=31;dv++)dd+="<option value='"+dv+"'>"+dv+"</option>";d.innerHTML=dd;y.value=1995;m.value=1;d.value=1;}
+fillSelects("y1","m1","d1");fillSelects("y2","m2","d2");
 
-var meElem=null;
+var meElem=null, selState=null, selWant=null;
+function show(id){var ss=document.querySelectorAll(".screen");for(var i=0;i<ss.length;i++)ss[i].classList.remove("active");$(id).classList.add("active");window.scrollTo(0,0);}
 
-function show(id){
-  var ss=document.querySelectorAll(".screen");
-  for(var i=0;i<ss.length;i++) ss[i].classList.remove("active");
-  $(id).classList.add("active");
-  window.scrollTo(0,0);
-}
-
-/* ---------- 質問を描く ---------- */
-function buildQuestions(){
-  var html="";
-  for(var i=0;i<QUESTIONS.length;i++){
-    html+='<div class="q-item"><div class="q-text"><span class="no">'+(i+1)+'</span>'+QUESTIONS[i].t+'</div><div class="q-choices">';
-    for(var c=0;c<CHOICES.length;c++){
-      html+='<button class="q-choice" data-q="'+i+'" data-v="'+CHOICES[c].v+'">'+CHOICES[c].l+'</button>';
-    }
-    html+='</div></div>';
-  }
+function buildQuestions(){var html="";for(var i=0;i<QUESTIONS.length;i++){html+='<div class="q-item"><div class="q-text"><span class="no">'+(i+1)+'</span>'+QUESTIONS[i].t+'</div><div class="q-choices">';for(var c=0;c<CHOICES.length;c++)html+='<button class="q-choice" data-q="'+i+'" data-v="'+CHOICES[c].v+'">'+CHOICES[c].l+'</button>';html+='</div></div>';}
   $("qList").innerHTML=html;
-  var btns=$("qList").querySelectorAll(".q-choice");
-  for(var b=0;b<btns.length;b++){
-    btns[b].addEventListener("click", function(){
-      var qi=+this.getAttribute("data-q"), v=parseFloat(this.getAttribute("data-v"));
-      ANS[qi]=v;
-      var sib=$("qList").querySelectorAll('.q-choice[data-q="'+qi+'"]');
-      for(var s=0;s<sib.length;s++) sib[s].classList.remove("on");
-      this.classList.add("on");
-      updateProg();
-    });
-  }
-  updateProg();
+  var b=$("qList").querySelectorAll(".q-choice");for(var k=0;k<b.length;k++)b[k].addEventListener("click",function(){var qi=+this.getAttribute("data-q"),v=parseFloat(this.getAttribute("data-v"));ANS[qi]=v;var sib=$("qList").querySelectorAll('.q-choice[data-q="'+qi+'"]');for(var s=0;s<sib.length;s++)sib[s].classList.remove("on");this.classList.add("on");qProg();});
+  qProg();}
+function qProg(){var n=0;for(var i=0;i<QUESTIONS.length;i++)if(ANS[i]!=null)n++;$("qProg").textContent=n+" / "+QUESTIONS.length+" こたえた";$("go2").disabled=n<QUESTIONS.length;}
+
+function buildChips(){
+  var sh="";STATES.forEach(function(s){sh+='<button class="chip" data-st="'+s.k+'">'+s.label+'</button>';});$("stChips").innerHTML=sh;
+  var wh="";WANTS.forEach(function(w){wh+='<button class="chip" data-want="'+w.k+'">'+w.label+'</button>';});$("wantChips").innerHTML=wh;
+  $("stChips").querySelectorAll(".chip").forEach(function(b){b.addEventListener("click",function(){selState=this.getAttribute("data-st");$("stChips").querySelectorAll(".chip").forEach(function(c){c.classList.remove("on");});this.classList.add("on");chipProg();});});
+  $("wantChips").querySelectorAll(".chip").forEach(function(b){b.addEventListener("click",function(){selWant=this.getAttribute("data-want");$("wantChips").querySelectorAll(".chip").forEach(function(c){c.classList.remove("on");});this.classList.add("on");chipProg();});});
 }
-function updateProg(){
-  var n=0; for(var i=0;i<QUESTIONS.length;i++) if(ANS[i]!=null) n++;
-  $("qProg").textContent=n+" / "+QUESTIONS.length+" こたえた";
-  $("go2").disabled = n<QUESTIONS.length;
-}
+function chipProg(){$("go3").disabled=!(selState&&selWant);}
 
 function renderMe(){
-  meElem=gogyo(parseInt($("y1").value,10));
-  var t=TYPES[meElem];
-  var k=calcKaika();
-  var km, ksymbol;
-  if(k>=66){ km="あなたの"+t.element+"の色気は、今しっかりひらいています。中身と見た目が一致して、それ自体が魅力に🤍"; }
-  else if(k>=40){ km="あなたの色気は、半分くらい出ている状態。あと少し、力をぬいて整えると、ぐっとひらきます。"; }
-  else { km="あなたの色気は、まだそっと眠っている状態。きっかけひとつで、ふっと目覚める伸びしろを持っています🤍"; }
+  meElem=gogyo(parseInt($("y1").value,10));var t=TYPES[meElem];var k=calcKaika();
+  var km; if(k>=66)km="あなたの"+t.element+"の色気は、今しっかりひらいています。中身と見た目が一致して、それ自体が魅力に🤍";else if(k>=40)km="あなたの色気は、半分くらい出ている状態。あと少し、力をぬいて整えると、ぐっとひらきます。";else km="あなたの色気は、まだそっと眠っている状態。きっかけひとつで、ふっと目覚める伸びしろを持っています🤍";
+  var st=STATE_DATA[selState]; var careLi=st.care.map(function(c){return '<li>'+c+'</li>';}).join("");
   $("meCard").innerHTML=
     '<div class="res-eyebrow">Your LOVE BODY</div>'+
-    '<div class="res-symbol">'+t.symbol+'</div>'+
-    '<div class="res-type">'+t.name+'</div>'+
+    '<div class="res-symbol">'+t.symbol+'</div><div class="res-type">'+t.name+'</div>'+
     '<div style="text-align:center"><span class="element">五行 ・ '+t.element+'</span></div>'+
     '<div class="res-tag">'+t.tag+'</div>'+
-    '<div class="kaika"><div class="kl">Bloom ─ 色気の開花度</div><div class="kn">'+k+'%</div>'+
-      '<div class="bar"><i style="width:'+k+'%"></i></div><div class="km">'+km+'</div></div>'+
+    '<div class="kaika"><div class="kl">Bloom ─ 色気の開花度</div><div class="kn">'+k+'%</div><div class="bar"><i style="width:'+k+'%"></i></div><div class="km">'+km+'</div></div>'+
+    '<div class="blk"><div class="bl">Now ─ 今の愛・関係の状態</div><p class="read">'+st.kokoro+'<br>カラダ：'+st.karada+'<br><br>'+st.lead+'</p><ul>'+careLi+'</ul></div>'+
+    '<div class="blk"><div class="bl">Wish ─ こころの向き</div><p class="read">'+WANT_MSG[selWant]+'</p></div>'+
     '<div class="blk"><div class="bl">Charm ─ あなたの魅力</div><p>'+t.charm+'</p></div>'+
     '<div class="blk"><div class="bl">Sensual ─ 色気の出し方</div><p>'+t.iro+'</p></div>'+
-    '<div class="blk"><div class="bl">Love ─ 恋のヒント</div><p>'+t.koi+'</p></div>';
+    '<div class="blk"><div class="bl">Love ─ 恋のヒント</div><p>'+t.koi+'</p></div>'+
+    '<div class="grace">'+GRACE+'</div>';
   show("s-me");
 }
-
 function renderCompat(){
-  var partElem=gogyo(parseInt($("y2").value,10));
-  var rel=relation(meElem,partElem), c=COMPAT[rel];
-  var me=TYPES[meElem], pa=TYPES[partElem];
+  var partElem=gogyo(parseInt($("y2").value,10));var rel=relation(meElem,partElem),c=COMPAT[rel];var me=TYPES[meElem],pa=TYPES[partElem];
   $("compatCard").innerHTML=
     '<div class="res-eyebrow">Compatibility</div>'+
     '<div class="pair"><div class="p">あなた<b>'+me.element+'</b></div><div class="amp">♡</div><div class="p">あの人<b>'+pa.element+'</b></div></div>'+
@@ -342,15 +312,17 @@ function renderCompat(){
   show("s-compat");
 }
 
-$("go1").addEventListener("click", function(){ buildQuestions(); show("s-q"); });
-$("backIntro").addEventListener("click", function(){ show("s-intro"); });
-$("go2").addEventListener("click", renderMe);
-$("redo").addEventListener("click", function(){ ANS=[]; show("s-intro"); });
-$("toCompat").addEventListener("click", function(){ show("s-pin"); });
-$("backMe").addEventListener("click", function(){ show("s-me"); });
-$("goC").addEventListener("click", renderCompat);
-$("again").addEventListener("click", function(){ show("s-pin"); });
-$("home").addEventListener("click", function(){ show("s-intro"); });
+$("go1").addEventListener("click",function(){buildQuestions();show("s-q");});
+$("backIntro").addEventListener("click",function(){show("s-intro");});
+$("go2").addEventListener("click",function(){buildChips();chipProg();show("s-love");});
+$("backQ").addEventListener("click",function(){show("s-q");});
+$("go3").addEventListener("click",renderMe);
+$("redo").addEventListener("click",function(){ANS=[];selState=null;selWant=null;show("s-intro");});
+$("toCompat").addEventListener("click",function(){show("s-pin");});
+$("backMe").addEventListener("click",function(){show("s-me");});
+$("goC").addEventListener("click",renderCompat);
+$("again").addEventListener("click",function(){show("s-pin");});
+$("home").addEventListener("click",function(){show("s-intro");});
 </script>
 </body>
 </html>
