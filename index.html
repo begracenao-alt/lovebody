@@ -45,8 +45,9 @@
   .birth{display:flex;gap:8px;justify-content:center;align-items:center}
   .birth select{font-family:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 10px;text-align:center}
   .birth span{font-size:13px;color:var(--ink-faint)}
-  .btn{display:block;width:100%;border:0;border-radius:16px;padding:16px;font-family:inherit;font-size:16px;font-weight:600;letter-spacing:.08em;cursor:pointer;
-    color:#fff;background:linear-gradient(120deg,#ff9a5a,#ff6fae,#b07cff,#5aa9f0);box-shadow:0 10px 26px -10px rgba(180,110,170,.6);transition:.2s;margin-top:22px}
+  .btn{display:block;width:100%;border:0;border-radius:999px;padding:16px;font-family:inherit;font-size:16px;font-weight:600;letter-spacing:.08em;cursor:pointer;
+    color:#fff;background:linear-gradient(120deg,#ff9a5a,#ff6fae,#b07cff,#5aa9f0);background-size:220% 100%;animation:bflow 7s ease infinite;box-shadow:0 10px 26px -10px rgba(180,110,170,.6);transition:.2s;margin-top:22px}
+  @keyframes bflow{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
   .btn:active{transform:translateY(1px)}
   .btn:disabled{opacity:.4;cursor:default;box-shadow:none}
   .btn--soft{color:var(--rose-deep);background:#fff;border:1px solid var(--rose);box-shadow:var(--shadow)}
