@@ -20,14 +20,14 @@
 <style>
   :root{
     --ink:#46383f; --ink-soft:#6f5e66; --ink-faint:#a18f97;
-    --rose:#e2a6b4; --rose-deep:#c97f93; --champ:#e6c98a; --champ-deep:#bd9c5e;
-    --lav:#b89ed6; --line:rgba(150,110,130,.14); --card:rgba(255,255,255,.66);
+    --rose:#ff8fbf; --rose-deep:#e0568f; --champ:#ffc46a; --champ-deep:#f0913a;
+    --lav:#b07cff; --line:rgba(150,110,130,.14); --card:rgba(255,255,255,.66);
     --shadow:0 16px 44px -26px rgba(150,90,110,.45);
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
   html,body{height:100%}
   body{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif; color:var(--ink);
-    background:radial-gradient(125% 90% at 50% -10%, #fffafc 0%, #fbf1f5 46%, #f3eef8 100%) fixed;
+    background:radial-gradient(120% 60% at 50% -8%, rgba(255,255,255,.92), rgba(255,255,255,0) 55%), linear-gradient(165deg,#fff3e9 0%,#ffe0ee 26%,#f0dcff 50%,#dcebff 74%,#dcf6e8 100%) fixed;
     min-height:100vh; line-height:1.85; letter-spacing:.03em; -webkit-font-smoothing:antialiased;}
   .wrap{max-width:480px;margin:0 auto;padding:30px 22px 70px;min-height:100vh}
   .brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:14px;letter-spacing:.24em;color:var(--rose-deep);text-align:center}
@@ -35,7 +35,7 @@
   .screen.active{display:block}
   @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   .hero{text-align:center;padding:30px 0 6px}
-  .hero h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:46px;letter-spacing:.12em;color:var(--rose-deep);line-height:1.05}
+  .hero h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:46px;letter-spacing:.12em;background:linear-gradient(90deg,#ff9a5a,#ff6fae,#b07cff,#5aa9f0);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.05}
   .hero .sub{font-size:15px;letter-spacing:.22em;color:var(--ink-soft);margin-top:12px}
   .hero .lead{font-size:13.5px;color:var(--ink-soft);line-height:2;margin:18px 14px 0}
   .ornament{font-size:20px;color:var(--champ-deep);margin:16px 0}
@@ -46,7 +46,7 @@
   .birth select{font-family:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 10px;text-align:center}
   .birth span{font-size:13px;color:var(--ink-faint)}
   .btn{display:block;width:100%;border:0;border-radius:16px;padding:16px;font-family:inherit;font-size:16px;font-weight:600;letter-spacing:.08em;cursor:pointer;
-    color:#fff;background:linear-gradient(135deg,var(--rose),var(--rose-deep));box-shadow:0 10px 26px -10px rgba(201,127,147,.7);transition:.2s;margin-top:22px}
+    color:#fff;background:linear-gradient(120deg,#ff9a5a,#ff6fae,#b07cff,#5aa9f0);box-shadow:0 10px 26px -10px rgba(180,110,170,.6);transition:.2s;margin-top:22px}
   .btn:active{transform:translateY(1px)}
   .btn:disabled{opacity:.4;cursor:default;box-shadow:none}
   .btn--soft{color:var(--rose-deep);background:#fff;border:1px solid var(--rose);box-shadow:var(--shadow)}
